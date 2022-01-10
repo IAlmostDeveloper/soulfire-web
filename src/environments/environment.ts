@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: '',
+  baseUrl: 'https://36c7-195-38-23-9.ngrok.io/api',
+  baseUrl2: '',
   useHash: false,
 };
 

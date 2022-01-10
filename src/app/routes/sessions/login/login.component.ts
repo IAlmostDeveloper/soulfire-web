@@ -38,10 +38,12 @@ export class LoginComponent implements OnInit {
     this.isSubmitting = true;
 
     this.auth
-      .login(this.username?.value, this.password?.value, this.rememberMe?.value)
+      .login(this.username?.value, this.password?.value)
       .pipe(filter(authenticated => authenticated))
       .subscribe(
-        () => this.router.navigateByUrl('/'),
+        () => {
+          this.router.navigateByUrl('/');
+        },
         (errorRes: HttpErrorResponse) => {
           if (errorRes.status === 422) {
             const form = this.loginForm;
