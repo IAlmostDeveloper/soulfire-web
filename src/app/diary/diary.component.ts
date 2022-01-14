@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DiaryService } from './diary.service';
 @Component({
   selector: 'app-diary',
-  template: `
-    <p>
-      diary works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: `./diary.component.html`,
+  styles: [],
 })
 export class DiaryComponent implements OnInit {
+  constructor(public diaryService: DiaryService) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  getDiaryNotes() {
+    this.diaryService.getDiaryNotes('')
+    .subscribe(res => {
+
+    });
   }
-
 }

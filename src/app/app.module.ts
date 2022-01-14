@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SelfbeliefsComponent } from './selfbeliefs/selfbeliefs.component';
@@ -13,16 +13,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthService } from './auth/auth.service';
+import { DiaryService } from './diary/diary.service';
+import { LocalStorageService } from './services/local-storage.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    routingComponents,
-
-  ],
+  declarations: [AppComponent, routingComponents],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -31,8 +32,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    MatFormFieldModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    LocalStorageService,
+    AuthService,
+    DiaryService
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

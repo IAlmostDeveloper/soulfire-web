@@ -9,12 +9,12 @@
 
 <mat-toolbar class="mat-elevation-z8">
     <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-      <mat-icon *ngIf="!sidenav.opened">
-          menu
-      </mat-icon>
-      <mat-icon *ngIf="sidenav.opened">
-          close
-      </mat-icon>
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
   </button> Responsive side navigation
 </mat-toolbar>
 
@@ -28,25 +28,30 @@
 
         <mat-divider></mat-divider>
 
+        <button routerLink="/auth" mat-button class="menu-button">
+      <!-- <mat-icon>home</mat-icon> -->
+      <span>Авториза</span>
+    </button>
+
         <button routerLink="/diary" mat-button class="menu-button">
-          <!-- <mat-icon>home</mat-icon> -->
-          <span>Дневник</span>
-      </button>
+      <!-- <mat-icon>home</mat-icon> -->
+      <span>Дневник</span>
+    </button>
         <button routerLink="/selfbeliefs" mat-button class="menu-button">
-          <!-- <mat-icon>person</mat-icon> -->
-          <span>Убеждения</span>
-      </button>
-        <button routerLink="presets" mat-button class="menu-button">
-          <!-- <mat-icon>info</mat-icon> -->
-          <span>Достижения</span>
-      </button>
+      <!-- <mat-icon>person</mat-icon> -->
+      <span>Убеждения</span>
+    </button>
+        <button routerLink="achievements" mat-button class="menu-button">
+      <!-- <mat-icon>info</mat-icon> -->
+      <span>Достижения</span>
+    </button>
 
         <mat-divider></mat-divider>
 
         <button mat-button class="menu-button">
-          <!-- <mat-icon>help</mat-icon> -->
-          <span>Help</span>
-      </button>
+      <!-- <mat-icon>help</mat-icon> -->
+      <span>Help</span>
+    </button>
 
     </mat-sidenav>
     <mat-sidenav-content>
