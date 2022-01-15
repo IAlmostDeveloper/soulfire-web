@@ -9,7 +9,8 @@ if (environment.production) {
 }
 
 export function getBaseUrl() {
-  return 'https://866a-195-38-23-9.ngrok.io/';
+ // return 'http://localhost:5000/';
+   return 'http://api-soulfire.westus.cloudapp.azure.com/';
 }
 
 const providers = [

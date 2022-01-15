@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './auth/auth.service';
 import { DiaryService } from './diary/diary.service';
 import { LocalStorageService } from './services/local-storage.service';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, routingComponents],
@@ -33,6 +34,8 @@ import { LocalStorageService } from './services/local-storage.service';
     MatIconModule,
     MatDividerModule,
     MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     LocalStorageService,

@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { RequestResultDto } from '../dtos/RequestResultDto';
+import { AuthRequestResultDto } from '../dtos/AuthRequestResultDto';
 import { LocalStorageService } from '../services/local-storage.service';
 import { AuthRequest } from '../dtos/AuthRequest';
 
@@ -16,9 +16,9 @@ export class AuthService {
               @Inject('BASE_URL') private baseUrl: string) {
   }
 
-  public authenticate(request: AuthRequest): Observable<RequestResultDto>{
+  public authenticate(request: AuthRequest): Observable<AuthRequestResultDto>{
     const url = this.baseUrl + 'api/auth/login';
-    return this.http.post<RequestResultDto>(url, request, this.httpOptions);
+    return this.http.post<AuthRequestResultDto>(url, request, this.httpOptions);
   }
 
   // public getHomeAgreementList(state: GetHomeAgreementListRequest): Observable<RequestResultDto> {
