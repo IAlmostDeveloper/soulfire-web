@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RequestResultDto } from '../dtos/RequestResultDto';
 import { LocalStorageService } from '../services/local-storage.service';
+import { DiaryNote } from '../dtos/DiaryNote';
 
 
 @Injectable()
@@ -16,21 +17,26 @@ export class DiaryService {
               @Inject('BASE_URL') private baseUrl: string) {
   }
 
-  public getDiaryNotes(userId: string): Observable<RequestResultDto> {
-    this.httpOptions.headers.append("Authorization",`Bearer ${this.storageService.read('token')}`);
+  public getDiaryNotes(): Observable<RequestResultDto> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": `Bearer ${this.storageService.read('token')}`
+      })
+    }
+    const userId = this.storageService.read('userId');
     const url = this.baseUrl + 'api/diary/' + userId;
-    return this.http.get<RequestResultDto>(url, this.httpOptions);
+    return this.http.get<RequestResultDto>(url, httpOptions);
   }
 
-  // public getHomeAgreementList(state: GetHomeAgreementListRequest): Observable<RequestResultDto> {
-  //   this.appService.showOverlay();
-  //   const url = this.baseUrl + 'api/home/gethomeagreementlist';
-  //   return this.http.post<RequestResultDto>(url, state, this.httpOptions);
-  // }
+  public addDiaryNote(state: DiaryNote): Observable<RequestResultDto>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": `Bearer ${this.storageService.read('token')}`
+      })
+    }
+    const userId = this.storageService.read('userId');
+    const url = this.baseUrl + 'api/diary/' + userId;
+    return this.http.post<RequestResultDto>(url, state, httpOptions);
+  }
 
-  // public getHomeStatistics(state: GetHomeStatisticsRequest): Observable<RequestResultDto> {
-  //   this.appService.showOverlay();
-  //   const url = this.baseUrl + 'api/home/gethomestatistics';
-  //   return this.http.post<RequestResultDto>(url, state, this.httpOptions);
-  // }
 }

@@ -42,9 +42,8 @@ export class AuthComponent implements OnInit {
     .authenticate(request)
     .subscribe((res) => {
       this.storageService.save('token', res.token);
+      this.storageService.save('userId', res.userId);
       this.router.navigateByUrl('/diary');
     });
   }
-
-  authenticate() {}
 }

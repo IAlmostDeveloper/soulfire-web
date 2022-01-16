@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
@@ -20,6 +21,8 @@ import { AuthService } from './auth/auth.service';
 import { DiaryService } from './diary/diary.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RegisterService } from './register/register.service';
+import { FlexModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [AppComponent, routingComponents],
@@ -35,11 +38,14 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatDividerModule,
     MatFormFieldModule,
     FormsModule,
+    FlexModule,
+    MatCardModule,
     ReactiveFormsModule,
   ],
   providers: [
     LocalStorageService,
     AuthService,
+    RegisterService,
     DiaryService
   ],
   bootstrap: [AppComponent],
