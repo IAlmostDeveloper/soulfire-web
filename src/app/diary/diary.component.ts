@@ -2,13 +2,18 @@ import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { DiaryNote } from '../dtos/DiaryNote';
 import { DiaryService } from './diary.service';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-diary',
   templateUrl: `./diary.component.html`,
   styleUrls: ['./diary.component.scss'],
 })
 export class DiaryComponent implements OnInit {
-  constructor(public diaryService: DiaryService) {}
+  constructor(public matDialog: MatDialog,
+    public diaryService: DiaryService,
+    private router: Router) {}
   title = 'Card View Demo';
 
   gridData: Array<DiaryNote> = [];
@@ -32,7 +37,8 @@ export class DiaryComponent implements OnInit {
     });
   }
 
-  openAddNoteDialog(){
-
+  addDiaryNote(){
+    this.router.navigateByUrl('/adddiarynote');
   }
+
 }

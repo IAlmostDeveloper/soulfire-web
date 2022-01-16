@@ -7,9 +7,11 @@ import { PresetsComponent } from './presets/presets.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthComponent } from './auth/auth.component';
 import { RegisterComponent } from './register/register.component';
+import { AddDiaryNoteComponent } from './add-diary-note/add-diary-note.component';
 
 const routes: Routes = [
   { path: 'diary', component: DiaryComponent },
+  { path: 'adddiarynote', component: AddDiaryNoteComponent },
   { path: 'selfbeliefs', component: SelfbeliefsComponent },
   { path: 'achievements', component: AchievementsComponent },
   { path: 'presets', component: PresetsComponent },
@@ -31,4 +33,5 @@ export const routingComponents = [
   ProfileComponent,
   AuthComponent,
   RegisterComponent,
+  AddDiaryNoteComponent
 ];

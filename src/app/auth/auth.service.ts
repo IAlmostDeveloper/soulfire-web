@@ -20,10 +20,4 @@ export class AuthService {
     const url = this.baseUrl + 'api/auth/login';
     return this.http.post<AuthRequestResultDto>(url, request, this.httpOptions);
   }
-
-  // public getHomeAgreementList(state: GetHomeAgreementListRequest): Observable<RequestResultDto> {
-  //   this.appService.showOverlay();
-  //   const url = this.baseUrl + 'api/home/gethomeagreementlist';
-  //   return this.http.post<RequestResultDto>(url, state, this.httpOptions);
-  // }
 }

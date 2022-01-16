@@ -1,0 +1,23 @@
+<div>
+    Название
+    <form [formGroup]="addDiaryForm" class="login-container" (ngSubmit)="addDiaryNote()">
+        <p [ngClass]="{ 'has-error': isSubmitted && formControls.title.errors }">
+            <input type="text" placeholder="Название" formControlName="title">
+        </p>
+        <div *ngIf="isSubmitted && formControls.title.errors" class="help-block">
+            <div *ngIf="formControls.title.errors.required">Email is required</div>
+        </div>
+    </form>
+</div>
+<div>
+    Содержимое
+    <form [formGroup]="addDiaryForm" class="login-container" (ngSubmit)="addDiaryNote()">
+        <p [ngClass]="{ 'has-error': isSubmitted && formControls.content.errors }">
+            <input type="textarea" placeholder="Содержимое" formControlName="content">
+        </p>
+        <div *ngIf="isSubmitted && formControls.content.errors" class="help-block">
+            <div *ngIf="formControls.content.errors.required">Email is required</div>
+        </div>
+    </form>
+</div>
+<button mat-button (click)="addDiaryNote()">Добавить</button>
