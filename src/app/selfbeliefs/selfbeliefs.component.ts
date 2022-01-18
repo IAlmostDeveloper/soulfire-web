@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-selfbeliefs',
-  template: `
-    <p>
-      selfbeliefs works!
-    </p>
-  `,
+  templateUrl: `./selfbeliefs.component.html`,
   styles: [
   ]
 })

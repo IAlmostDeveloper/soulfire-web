@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-presets',
-  template: `
-    <p>
-      presets works!
-    </p>
-  `,
+  templateUrl: `./presets.component.html`,
   styles: [
   ]
 })

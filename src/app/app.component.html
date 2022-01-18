@@ -7,24 +7,15 @@
 <a routerLink="/register">Register</a>
 
 
-<mat-toolbar class="mat-elevation-z8">
-    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-    <mat-icon *ngIf="!sidenav.opened">
-      menu
-    </mat-icon>
-    <mat-icon *ngIf="sidenav.opened">
-      close
-    </mat-icon>
-  </button> Responsive side navigation
-</mat-toolbar>
+
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
 
-        <img class="avatar mat-elevation-z8" src="https://i.ytimg.com/vi/VWxjcQjHA7o/hqdefault.jpg" />
+        <img class="avatar mat-elevation-z8" src="https://sun9-28.userapi.com/impg/hkoHEFeXTqlqSTmwupVQaZQlTBAQLDieuBKB1w/9gflOu9bsh4.jpg?size=1500x1500&quality=96&sign=88b9779174f6057d4533ba92103254f0&type=album" />
 
-        <h4 class="name">John Smith</h4>
-        <p class="designation">Angular Developer, 20 y.o.</p>
+        <h4>admin</h4>
+        <h4 class="name">Философ</h4>
 
         <mat-divider></mat-divider>
 
@@ -45,12 +36,17 @@
       <!-- <mat-icon>info</mat-icon> -->
       <span>Достижения</span>
     </button>
-
-        <mat-divider></mat-divider>
-
-        <button mat-button class="menu-button">
-      <!-- <mat-icon>help</mat-icon> -->
-      <span>Help</span>
+        <button routerLink="presets" mat-button class="menu-button">
+      <!-- <mat-icon>info</mat-icon> -->
+      <span>Установки</span>
+    </button>
+        <button routerLink="register" mat-button class="menu-button">
+      <!-- <mat-icon>info</mat-icon> -->
+      <span>Регистрация</span>
+    </button>
+        <button routerLink="profile" mat-button class="menu-button">
+      <!-- <mat-icon>info</mat-icon> -->
+      <span>Профиль</span>
     </button>
 
     </mat-sidenav>

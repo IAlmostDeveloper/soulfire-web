@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-achievements',
-  template: `
-    <p>
-      achievements works!
-    </p>
-  `,
+  templateUrl: `./achievements.component.html`,
   styles: [
   ]
 })
